@@ -1,0 +1,13 @@
+.actions {
+  justify-content: space-between;
+}
+
+.edit-btn:hover {
+  color: var(--purple-color);
+  transition: color 0.3s ease-in-out;
+}
+
+.delete-btn:hover {
+  color: var(--red-color);
+  transition: color 0.3s ease-in-out;
+}

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM Клиенты</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/loader.css" />
+    <link rel="stylesheet" href="styles/table.css" />
+    <link rel="stylesheet" href="styles/contacts.css" />
+    <link rel="stylesheet" href="styles/actions.css" />
+    <link rel="stylesheet" href="styles/modal.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container container flex">
+        <a class="header__logo" href="#">
+          <svg
+            width="50"
+            height="50"
+            viewBox="0 0 50 50"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="25" cy="25" r="25" fill="#9873FF" />
+            <path
+              d="M17.2617 29.082C17.2617 30.0898 16.9102 30.8574 16.207 31.3848C15.5098 31.9121 14.4639 32.1758 13.0693 32.1758C12.3545 32.1758 11.7451 32.126 11.2412 32.0264C10.7373 31.9326 10.2656 31.792 9.82617 31.6045V29.3896C10.3242 29.624 10.8838 29.8203 11.5049 29.9785C12.1318 30.1367 12.6826 30.2158 13.1572 30.2158C14.1299 30.2158 14.6162 29.9346 14.6162 29.3721C14.6162 29.1611 14.5518 28.9912 14.4229 28.8623C14.2939 28.7275 14.0713 28.5781 13.7549 28.4141C13.4385 28.2441 13.0166 28.0479 12.4893 27.8252C11.7334 27.5088 11.1768 27.2158 10.8193 26.9463C10.4678 26.6768 10.21 26.3691 10.0459 26.0234C9.8877 25.6719 9.80859 25.2412 9.80859 24.7314C9.80859 23.8584 10.1455 23.1846 10.8193 22.71C11.499 22.2295 12.46 21.9893 13.7021 21.9893C14.8857 21.9893 16.0371 22.2471 17.1562 22.7627L16.3477 24.6963C15.8555 24.4854 15.3955 24.3125 14.9678 24.1777C14.54 24.043 14.1035 23.9756 13.6582 23.9756C12.8672 23.9756 12.4717 24.1895 12.4717 24.6172C12.4717 24.8574 12.5977 25.0654 12.8496 25.2412C13.1074 25.417 13.667 25.6777 14.5283 26.0234C15.2959 26.334 15.8584 26.624 16.2158 26.8936C16.5732 27.1631 16.8369 27.4736 17.0068 27.8252C17.1768 28.1768 17.2617 28.5957 17.2617 29.082ZM21.9287 26.6562L23.0977 25.1621L25.8486 22.1738H28.8721L24.9697 26.4365L29.1094 32H26.0156L23.1855 28.0186L22.0342 28.9414V32H19.3535V18.3242H22.0342V24.4238L21.8936 26.6562H21.9287ZM35.9824 21.9893C37.1426 21.9893 38.0508 22.4434 38.707 23.3516C39.3633 24.2539 39.6914 25.4932 39.6914 27.0693C39.6914 28.6924 39.3516 29.9492 38.6719 30.8398C37.998 31.7305 37.0781 32.1758 35.9121 32.1758C34.7578 32.1758 33.8525 31.7568 33.1963 30.9189H33.0117L32.5635 32H30.5156V18.3242H33.1963V21.5059C33.1963 21.9102 33.1611 22.5576 33.0908 23.4482H33.1963C33.8232 22.4756 34.752 21.9893 35.9824 21.9893ZM35.1211 24.1338C34.459 24.1338 33.9756 24.3389 33.6709 24.749C33.3662 25.1533 33.208 25.8242 33.1963 26.7617V27.0518C33.1963 28.1064 33.3516 28.8623 33.6621 29.3193C33.9785 29.7764 34.4766 30.0049 35.1562 30.0049C35.707 30.0049 36.1436 29.7529 36.4658 29.249C36.7939 28.7393 36.958 28.001 36.958 27.0342C36.958 26.0674 36.7939 25.3438 36.4658 24.8633C36.1377 24.377 35.6895 24.1338 35.1211 24.1338ZM41.5283 30.7432C41.5283 30.251 41.6602 29.8789 41.9238 29.627C42.1875 29.375 42.5713 29.249 43.0752 29.249C43.5615 29.249 43.9365 29.3779 44.2002 29.6357C44.4697 29.8936 44.6045 30.2627 44.6045 30.7432C44.6045 31.2061 44.4697 31.5723 44.2002 31.8418C43.9307 32.1055 43.5557 32.2373 43.0752 32.2373C42.583 32.2373 42.2021 32.1084 41.9326 31.8506C41.6631 31.5869 41.5283 31.2178 41.5283 30.7432Z"
+              fill="white"
+            />
+          </svg>
+        </a>
+        <input
+          class="header__input"
+          type="text"
+          id="search-input"
+          placeholder="Введите запрос"
+        />
+      </div>
+    </header>
+
+    <main>
+      <section class="table" id="table">
+        <div class="main__container container">
+          <h1 class="main__title">Клиенты</h1>
+          <table class="main__table" id="clients-table">
+            <colgroup>
+              <col style="width: 10%" />
+              <col style="width: 30%" />
+              <col style="width: 20%" />
+              <col style="width: 20%" />
+              <col style="width: 15%" />
+              <col style="width: 20%" />
+            </colgroup>
+            <thead class="main__table-head">
+              <tr>
+                <th class="main__table-column" id="id">
+                  <div class="flex">
+                    <span>ID</span>
+                    <button class="btn-reset filter-btn" data-column="id">
+                      <img
+                        class="sort-icon"
+                        src="icons/up.svg"
+                        alt="Сортировка"
+                      />
+                    </button>
+                  </div>
+                </th>
+                <th class="main__table-column">
+                  <div class="flex">
+                    <span>Фамилия Имя Отчество</span>
+                    <button class="btn-reset filter-btn" data-column="fullName">
+                      <img
+                        class="sort-icon"
+                        src="icons/up.svg"
+                        alt="Сортировка"
+                      />
+                      <span class="sort-text">А-Я</span>
+                    </button>
+                  </div>
+                </th>
+                <th class="main__table-column">
+                  <div class="flex">
+                    <span>Дата и время создания</span>
+                    <button
+                      class="btn-reset filter-btn"
+                      data-column="createdAt"
+                    >
+                      <img
+                        class="sort-icon"
+                        src="icons/up.svg"
+                        alt="Сортировка"
+                      />
+                    </button>
+                  </div>
+                </th>
+                <th class="main__table-column">
+                  <div class="flex">
+                    <span>Дата и время изменения</span>
+                    <button
+                      class="btn-reset filter-btn"
+                      data-column="updatedAt"
+                    >
+                      <img
+                        class="sort-icon"
+                        src="icons/up.svg"
+                        alt="Сортировка"
+                      />
+                    </button>
+                  </div>
+                </th>
+                <th class="main__table-column">Контакты</th>
+                <th class="main__table-column">Действия</th>
+              </tr>
+            </thead>
+
+            <tbody class="main__table-body">
+              <!-- Сюда будут загружаться клиенты -->
+
+              <!-- Окно загрузки -->
+              <div class="loader-container" id="loader-container">
+                <div class="loader"></div>
+              </div>
+            </tbody>
+          </table>
+          <div class="add-client flex" id="add-client">
+            <button class="btn-reset add-client__button">
+              <img src="icons/add-client.svg" />
+              <span>Добавить клиента</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+
+    <!-- Модальное окно добавления клиента -->
+    <div class="modal-overlay" id="add-client-modal">
+      <div class="modal-content add-client__content">
+        <h2 class="modal-title add-client__title">Новый клиент</h2>
+        <button class="close-button btn-reset" id="add-close-btn">
+          <svg
+            width="29"
+            height="29"
+            viewBox="0 0 29 29"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M22.2333 7.73333L21.2666 6.76666L14.4999 13.5334L7.73324 6.7667L6.76658 7.73336L13.5332 14.5L6.7666 21.2667L7.73327 22.2333L14.4999 15.4667L21.2666 22.2334L22.2332 21.2667L15.4666 14.5L22.2333 7.73333Z"
+              fill="#B0B0B0"
+            />
+        </button>
+        <form class="add-client__form">
+          <input class="add-client__input" type="text" id="client-surname" placeholder="Фамилия" required />
+          <input class="add-client__input" type="text" id="client-name" placeholder="Имя" required />
+          <input class="add-client__input" type="text" id="client-lastname" placeholder="Отчество"/>
+        </form>
+        <div class="edit-contacts">
+          <div id="contacts-container">
+            <!-- Сюда будут добавляться контакты -->
+          </div>
+          <button class="btn-reset add-contacts-btn" id="add-contact-btn">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.00001 3.66659C6.63334 3.66659 6.33334 3.96659 6.33334 4.33325V6.33325H4.33334C3.96668 6.33325 3.66668 6.63325 3.66668 6.99992C3.66668 7.36659 3.96668 7.66659 4.33334 7.66659H6.33334V9.66659C6.33334 10.0333 6.63334 10.3333 7.00001 10.3333C7.36668 10.3333 7.66668 10.0333 7.66668 9.66659V7.66659H9.66668C10.0333 7.66659 10.3333 7.36659 10.3333 6.99992C10.3333 6.63325 10.0333 6.33325 9.66668 6.33325H7.66668V4.33325C7.66668 3.96659 7.36668 3.66659 7.00001 3.66659ZM7.00001 0.333252C3.32001 0.333252 0.333344 3.31992 0.333344 6.99992C0.333344 10.6799 3.32001 13.6666 7.00001 13.6666C10.68 13.6666 13.6667 10.6799 13.6667 6.99992C13.6667 3.31992 10.68 0.333252 7.00001 0.333252ZM7.00001 12.3333C4.06001 12.3333 1.66668 9.93992 1.66668 6.99992C1.66668 4.05992 4.06001 1.66659 7.00001 1.66659C9.94001 1.66659 12.3333 4.05992 12.3333 6.99992C12.3333 9.93992 9.94001 12.3333 7.00001 12.3333Z" fill="#9873FF"/>
+            </svg>
+            Добавить контакт
+          </button>
+        </div>
+        <div class="add-contacts__buttons">
+          <button class="btn-reset confirm_btn" id="save-client-btn">Сохранить</button>
+          <button class="btn-reset cancel_btn" id="close-modal-btn">Отмена</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальное окно удаление клиента -->
+    <div class="modal-overlay" id="delete-modal">
+      <div class="modal-content delete__content" id="modal-content">
+        <h2 class="modal-title">Удалить клиента</h2>
+        <button class="close-button btn-reset" id="delete-close-btn">
+          <svg
+            width="29"
+            height="29"
+            viewBox="0 0 29 29"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M22.2333 7.73333L21.2666 6.76666L14.4999 13.5334L7.73324 6.7667L6.76658 7.73336L13.5332 14.5L6.7666 21.2667L7.73327 22.2333L14.4999 15.4667L21.2666 22.2334L22.2332 21.2667L15.4666 14.5L22.2333 7.73333Z"
+              fill="#B0B0B0"
+            />
+        </button>
+        <p class="delete__text">
+          Вы действительно хотите удалить данного клиента?
+        </p>
+        <button class="btn-reset confirm_btn" id="confirm-delete">
+          Удалить
+        </button>
+        <button class="btn-reset cancel_btn" id="cancel-delete">
+          Отмена
+        </button>
+      </div>
+    </div>
+
+    <!-- Модальное окно изменения клиента -->
+    <div class="modal-overlay" id="edit-client-modal">
+      <div class="modal-content edit-client__content" id="edit-modal-content">
+        <!-- Загрузка клиента -->
+        <div id="edit-loader" class="loader-container">
+          <div class="loader"></div>
+        </div>
+        <form id="modal-content-form" class="edit-content__form">
+          <h2 class="modal-title edit-modal__title">
+            Изменить данные <span class="edit-modal__id" id="edit-client-id"></span>
+          </h2>
+          <button class="close-button btn-reset" id="edit-close-btn">
+            <svg
+              width="29"
+              height="29"
+              viewBox="0 0 29 29"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M22.2333 7.73333L21.2666 6.76666L14.4999 13.5334L7.73324 6.7667L6.76658 7.73336L13.5332 14.5L6.7666 21.2667L7.73327 22.2333L14.4999 15.4667L21.2666 22.2334L22.2332 21.2667L15.4666 14.5L22.2333 7.73333Z"
+                fill="#B0B0B0"
+              />
+            </svg>
+          </button>
+          <label class="edit-label edit-label__surname">
+              <span class="edit-label__tag edit-label__required">Фамилия</span>
+            <input class="edit-label__input" type="text" id="edit-client-surname" required />
+          </label>
+          <label class="edit-label edit-label__name">
+              <span class="edit-label__tag edit-label__required">Имя</span>
+            <input class="edit-label__input" type="text" id="edit-client-name" required />
+          </label>
+          <label class="edit-label edit-label__fullName">
+              <span class="edit-label__tag">Отчествой</span>
+            <input class="edit-label__input" type="text" id="edit-client-lastname" />
+          </label>
+        </form>
+        <div class="edit-contacts">
+          <div class="edit-contacts-container" id="edit-contacts-container">
+            <!-- Контакты клиента будут добавляться сюда -->
+          </div>
+          <button class="btn-reset add-contacts-btn" id="edit-add-contact-btn">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.00001 3.66659C6.63334 3.66659 6.33334 3.96659 6.33334 4.33325V6.33325H4.33334C3.96668 6.33325 3.66668 6.63325 3.66668 6.99992C3.66668 7.36659 3.96668 7.66659 4.33334 7.66659H6.33334V9.66659C6.33334 10.0333 6.63334 10.3333 7.00001 10.3333C7.36668 10.3333 7.66668 10.0333 7.66668 9.66659V7.66659H9.66668C10.0333 7.66659 10.3333 7.36659 10.3333 6.99992C10.3333 6.63325 10.0333 6.33325 9.66668 6.33325H7.66668V4.33325C7.66668 3.96659 7.36668 3.66659 7.00001 3.66659ZM7.00001 0.333252C3.32001 0.333252 0.333344 3.31992 0.333344 6.99992C0.333344 10.6799 3.32001 13.6666 7.00001 13.6666C10.68 13.6666 13.6667 10.6799 13.6667 6.99992C13.6667 3.31992 10.68 0.333252 7.00001 0.333252ZM7.00001 12.3333C4.06001 12.3333 1.66668 9.93992 1.66668 6.99992C1.66668 4.05992 4.06001 1.66659 7.00001 1.66659C9.94001 1.66659 12.3333 4.05992 12.3333 6.99992C12.3333 9.93992 9.94001 12.3333 7.00001 12.3333Z" fill="#9873FF"/>
+            </svg>              
+            Добавить контакт
+          </button>
+        </div>
+        <div class="edit-btns">
+          <button class="btn-reset confirm_btn" id="save-edit-client-btn">Сохранить</button>
+          <button class="btn-reset cancel_btn" id="delete-client-btn">Удалить клиента</button>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="script.js"></script>
+  </body>
+</html>
+<!-- TODO: сделать функционал к "новый клиент", чтобы убирался класс -->

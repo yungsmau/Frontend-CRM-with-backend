@@ -1,0 +1,28 @@
+/* loader */
+/* Контейнер для выравнивания */
+.loader-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Или другое подходящее значение */
+}
+
+/* Спиннер в виде неполного круга */
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(0, 0, 0, 0); 
+  border-top-color: var(--purple-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Анимация вращения */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
